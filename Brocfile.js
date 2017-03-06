@@ -1,6 +1,7 @@
 'use strict';
 
 /* eslint-env node */
+// Uncomment lines in Brocfile.jsUncomment lines in Brocfile.js
 
 require('dotenv').config();
 const Merge = require('broccoli-merge-trees');

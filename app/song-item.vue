@@ -1,25 +1,32 @@
+<!-- Create a song-item.vue module -->
+ <!-- Move HTML to represent a single track to the template of this component -->
 <template lang="html">
-  <div class="results">
-    <div class="track">
-      <div class="track__media">
-        <div class="track__frame"></div>
-        <div class="song-name">
-          <div class="track__artist"></div>
-          <div class="track__name"></div>
+  <div class="SongItem">
+    <div class="panel-block">
+        <div class="media-left">
+          <img v-bind:src="track.album.images[0].url" alt="" class="track__frame">
         </div>
-      </div>
+
+        <li class="media-content track">
+          <h3 class="track__artist">{{ track.artists[0].name }}</h3>
+          <p class="track__name">{{ track.name }}</p>
+        </li>
+        <div class="media-right">
+          <a v-bind:href="track.external_urls.spotify"><span class="icon is-large fa fa-spotify"></span></a>
+        </div>
     </div>
   </div>
+
 </template>
 
 <script>
+// Add track to the props array for this module
 export default {
   props: ['track'],
   data() {
     return {
     };
   },
-
   methods: {
 
   },
